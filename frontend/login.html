@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Elective Hub</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body style="display: grid; place-items: center; min-height: 100vh; padding: 2rem;">
+  <div style="width: 100%; max-width: 480px; position: relative; z-index: 1;">
+    
+    <button id="theme-toggle" class="theme-toggle"></button>
+    
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <a href="./index.html" style="display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none;">
+        <span class="material-icons" style="font-size: 2rem;">auto_graph</span>
+        Elective Hub
+      </a>
+    </div>
+
+    <div class="card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
+      <div class="auth-header" style="text-align: center;">
+        <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Welcome Back</h1>
+        <p class="muted" style="margin: 0;">Sign in to continue to your dashboard</p>
+      </div>
+
+      <form id="login-form" style="display: flex; flex-direction: column; gap: 1.25rem;">
+        
+        <div class="form-section">
+          <label class="form-label" style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">Account Type</label>
+          <style>
+            .role-btn {
+              padding: 0.5rem;
+              border-radius: 8px;
+              border: none;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0.5rem;
+              background: transparent;
+              color: var(--muted);
+              cursor: pointer;
+              transition: all 0.2s ease;
+            }
+            .role-btn.active {
+              background: var(--card-bg);
+              color: var(--text) !important;
+              box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+          </style>
+          <div class="role-toggle" id="role-toggle" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; background: rgba(0,0,0,0.05); padding: 0.25rem; border-radius: 12px;">
+            <button class="role-btn active" type="button" data-role="student">
+              <span class="material-icons" style="font-size: 1.2rem;">school</span> Student
+            </button>
+            <button class="role-btn" type="button" data-role="admin">
+              <span class="material-icons" style="font-size: 1.2rem;">admin_panel_settings</span> Admin
+            </button>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <label for="email" class="form-label" style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">Email Address</label>
+          <div class="input-container" style="position: relative;">
+            <span class="material-icons" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 1.2rem;">email</span>
+            <input type="email" id="email" required placeholder="Enter your email" style="padding-left: 2.8rem; width: 100%;" />
+          </div>
+        </div>
+
+        <div class="form-section">
+          <label for="password" class="form-label" style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">Password</label>
+          <div class="input-container" style="position: relative;">
+            <span class="material-icons" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 1.2rem;">lock</span>
+            <input type="password" id="password" required placeholder="Enter your password" style="padding-left: 2.8rem; width: 100%;" />
+          </div>
+        </div>
+
+        <div class="form-section hidden-field" id="admin-passcode-wrap">
+          <label for="adminPasscode" class="form-label" style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">Admin Passcode</label>
+          <div class="input-container" style="position: relative;">
+            <span class="material-icons" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 1.2rem;">admin_panel_settings</span>
+            <input type="password" id="adminPasscode" placeholder="Enter admin passcode" style="padding-left: 2.8rem; width: 100%;" />
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 0.5rem; padding: 0.8rem;">
+          Sign In
+        </button>
+
+        <div id="message" class="status" style="text-align: center; min-height: 24px;"></div>
+      </form>
+
+      <div class="auth-footer" style="text-align: center; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+        <p style="margin: 0; font-size: 0.9rem; color: var(--muted);">
+          Don't have an account? <a href="./signup.html" style="font-weight: 600;">Create one</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/theme.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/login.js"></script>
+  <script>
+    // No additional JS needed for role visual toggle, login.js handles the active class
+  </script>
+</body>
+</html>
