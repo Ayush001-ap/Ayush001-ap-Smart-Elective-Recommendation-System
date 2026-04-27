@@ -1,0 +1,15 @@
+{
+  "name": "smart-elective-recommendation-system",
+  "version": "1.0.0",
+  "description": "Full-stack Smart Elective Recommendation System",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "build": "cd backend && npm install",
+    "install-backend": "cd backend && npm install",
+    "postinstall": "npm run install-backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
